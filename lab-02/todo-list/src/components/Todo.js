@@ -22,6 +22,7 @@ function Todo() {
                         padding: '5px 10px',
                         border: 'none',
                         marginLeft: '5px',
+                        cursor: 'pointer'
                     }}
                 >
                     Add a New Task
