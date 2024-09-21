@@ -13,20 +13,25 @@ function Todo() {
                     placeholder='Add a new Task'
                     style={{ padding: '8px' }}
                 />
+
+                {/* BUTTON TO ADD A NEW TASK */}
+                <button
+                    style={{
+                        backgroundColor: 'darkblue',
+                        color: 'white',
+                        padding: '5px 10px',
+                        border: 'none',
+                        marginLeft: '5px',
+                    }}
+                >
+                    Add a New Task
+                </button>
             </div>
 
-            {/* BUTTON TO ADD A NEW TASK */}
-            <button
-                style={{
-                    backgroundColor: 'darkblue',
-                    color: 'white',
-                    padding: '5px 10px',
-                    border: 'none',
-                    marginLeft: '5px',
-                }}
-            >
-                Add a New Task
-            </button>
+            {/* LIST FOR NEW TASKS */}
+            <ul style={{ listStyleType: 'circle', paddingLeft: '20px' }}>
+                {/* Task Items will be added here */}
+            </ul>
         </div>
     );
 }
