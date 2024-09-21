@@ -5,10 +5,7 @@ function DataFetching() {
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => {
-                console.log(response)
-                response.json();
-            })
+            .then((response) => response.json())
             .then((data) => setData(data));
     }, []);
 
