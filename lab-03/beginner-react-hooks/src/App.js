@@ -7,6 +7,7 @@ function App() {
       style={{
         textAlign: 'center',
         fontWeight: 'bold',
+        marginBottom: '32px'
       }}
     >React Hooks: useState and useEffect</h1>
   );
