@@ -20,8 +20,11 @@ function App() {
     alert(`Name: ${name}\nEmail: ${email}`);
   };
 
-  // FUNCTION TO RESET VALUES
-
+  // FUNCTION TO RESET NAME AND EMAIL
+  const handleReset = () => {
+    setName('');
+    setEmail('');
+  };
 
   return (
     <div className='App'>
@@ -59,15 +62,29 @@ function App() {
             onChange={handleInputChange}
           />
         </label>
+        {/* SUBMIT BTN */}
         <button
           type='submit'
           style={{
             display: 'inline-block',
             padding: '6px',
             borderRadius: '6px',
-            backgroundColor: 'greenyellow'
+            backgroundColor: 'greenyellow',
+            marginRight: '24px'
           }}
         >Submit</button>
+        {/* RESET BTN */}
+        <button
+          type='reset'
+          style={{
+            display: 'inline-block',
+            padding: '6px',
+            borderRadius: '6px',
+            backgroundColor: 'red',
+            color: 'whitesmoke'
+          }}
+          onClick={handleReset}
+        >Reset</button>
       </form>
       <p style={{ fontSize: '16px', fontWeight: 'bold' }}> Name: {name}</p>
       <p style={{ fontSize: '16px', fontWeight: 'bold' }}> Email: {email}</p>
