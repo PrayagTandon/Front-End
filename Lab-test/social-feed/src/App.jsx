@@ -5,12 +5,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-
-      <h1>Hello, Social Media</h1>
-
-      <Feed />
-      <Post />
+    <div className='main'>
+      <Feed
+      />
     </div>
   );
 }
