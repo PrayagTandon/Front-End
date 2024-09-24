@@ -16,7 +16,89 @@ body {
 }
 
 .main {
-  background-color: rgb(216, 105, 105);
   padding: 1.5rem 2rem;
   border-radius: 12px;
+}
+
+.posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+}
+
+.post {
+  background-color: #a3b18a;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+}
+
+.likes {
+  font-size: 16px;
+  font-weight: 700;
+  color: #03045e;
+}
+
+.like-button {
+  background-color: #bf4342;
+  transition: all 0.2s ease-in;
+  margin-right: .5rem;
+}
+
+.like-button:hover {
+  cursor: pointer;
+  background-color: #c55655;
+  border: 1px solid transparent;
+}
+
+.dislike-button {
+  background-color: #023e7d;
+  transition: all 0.2s ease-in;
+  margin-right: .5rem;
+}
+
+.dislike-button:hover {
+  cursor: pointer;
+  background-color: #1b518a;
+  border: 1px solid transparent;
+}
+
+#comment-form {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+#control-input {
+  display: inline-block;
+  padding: .6rem .8rem;
+  border-radius: 6px;
+  background-color: #caf0f8;
+  border: 2px solid transparent;
+  color: #000;
+}
+
+#control-input:focus {
+  border: 2px solid #8c1c13;
+  outline: 1px solid transparent;
+}
+
+#control-input::placeholder {
+  font-weight: 600;
+  color: rgb(121, 121, 121);
+}
+
+.submit-button {
+  background-color: #000;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
 }

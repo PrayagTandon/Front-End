@@ -1,14 +1,20 @@
 import React from "react";
 import Post from "./Post";
-import '../App.css';
 
-function Feed() {
+const Feed = () => {
+    console.log("feed component is mounted");
+
     return (
-        <div>
+        <div className="feed">
             <h1>Social Feed</h1>
-            <Post />
+            {/* Multiple Posts */}
+            <div className="posts">
+                <Post message="React is the best front end library" />
+                <Post message="React is Fun!" />
+            </div>
         </div>
     );
-}
+};
 
 export default Feed;
+
