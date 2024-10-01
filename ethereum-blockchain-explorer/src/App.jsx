@@ -1,12 +1,10 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Dashboard from './components/Dashboard';
+import Transactions from './components/Transactions';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <Navbar />
-      <Dashboard />
+    <div className="min-h-screen bg-gray-50">
+      <Transactions />
     </div>
   );
 }
