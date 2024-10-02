@@ -1,115 +1,56 @@
 import React, { useState } from 'react';
 import { faker } from '@faker-js/faker';
-import Header from './Header';
-import Receipt from './Receipt';
+import CryptoJS from 'crypto-js';
 
-// Hardcoded Ethereum addresses for selection
-const addresses = [
-    faker.finance.ethereumAddress(),
-    faker.finance.ethereumAddress(),
-    faker.finance.ethereumAddress(),
-    faker.finance.ethereumAddress(),
-];
-
-const Transfer = () => {
+const Transfer = ({ addNewTransaction }) => {
+    const [fromAddress, setFromAddress] = useState(faker.finance.ethereumAddress());
+    const [toAddress, setToAddress] = useState(faker.finance.ethereumAddress());
     const [amount, setAmount] = useState('');
-    const [selectedFromAddress, setSelectedFromAddress] = useState('');
-    const [selectedToAddress, setSelectedToAddress] = useState('');
-    const [receipt, setReceipt] = useState(null);
-    const [showReceipt, setShowReceipt] = useState(false);
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        const fakeReceipt = {
-            transactionHash: faker.string.uuid(),
-            blockHash: faker.string.uuid(),
-            blockNumber: faker.datatype.number(),
-            from: selectedFromAddress,
-            to: selectedToAddress,
-            amount,
-            gasUsed: faker.datatype.number({ min: 21000, max: 50000 }),
+        const newTransaction = {
+            transactionHash: CryptoJS.SHA256(faker.datatype.uuid()).toString(),
+            from: fromAddress,
+            to: toAddress,
+            amount: `${amount} ETH`,
+            gasUsed: faker.datatype.number({ min: 21000, max: 500000 }),
+            timestamp: new Date().toISOString(),
         };
-        setReceipt(fakeReceipt);
-        setShowReceipt(true);
-    };
-
-    // Handle form reset
-    const handleCancel = () => {
+        addNewTransaction(newTransaction);
         setAmount('');
-        setSelectedFromAddress('');
-        setSelectedToAddress('');
-        setShowReceipt(false);
     };
 
     return (
-        <div className="p-6">
-            <Header title="Transfers" />
-            <form onSubmit={handleSubmit} className="mt-4 bg-gray-100 p-4 rounded-lg shadow-md">
-                <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">Amount (ETH)</label>
-                    <input
-                        type="number"
-                        value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                    />
-                </div>
-
-                <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">From Address</label>
-                    <select
-                        value={selectedFromAddress}
-                        onChange={(e) => setSelectedFromAddress(e.target.value)}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                    >
-                        <option value="">Select From Address</option>
-                        {addresses.map((address) => (
-                            <option key={address} value={address}>
-                                {address}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">To Address</label>
-                    <select
-                        value={selectedToAddress}
-                        onChange={(e) => setSelectedToAddress(e.target.value)}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                    >
-                        <option value="">Select To Address</option>
-                        {addresses.map((address) => (
-                            <option key={address} value={address}>
-                                {address}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className="flex justify-end space-x-4">
-                    <button
-                        type="button"
-                        onClick={handleCancel}
-                        className="bg-red-500 text-white px-4 py-2 rounded-md shadow"
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        type="submit"
-                        className="bg-green-500 text-white px-4 py-2 rounded-md shadow"
-                    >
-                        Transfer
-                    </button>
-                </div>
-            </form>
-
-            {showReceipt && <Receipt {...receipt} />}
-        </div>
+        <form onSubmit={handleSubmit} className="border p-4 rounded-lg bg-gray-50">
+            <h3 className="font-semibold text-lg mb-2">Create New Transfer</h3>
+            <div className="mb-4">
+                <label className="block text-sm font-medium">From Address</label>
+                <input type="text" value={fromAddress} disabled className="mt-1 block w-full p-2 border rounded-md" />
+            </div>
+            <div className="mb-4">
+                <label className="block text-sm font-medium">To Address</label>
+                <input
+                    type="text"
+                    value={toAddress}
+                    onChange={(e) => setToAddress(e.target.value)}
+                    className="mt-1 block w-full p-2 border rounded-md"
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-sm font-medium">Amount (ETH)</label>
+                <input
+                    type="number"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    className="mt-1 block w-full p-2 border rounded-md"
+                    required
+                />
+            </div>
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md shadow">
+                Transfer
+            </button>
+        </form>
     );
 };
 
