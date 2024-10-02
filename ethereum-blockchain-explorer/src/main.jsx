@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import ReactDOM from 'react-dom/client'; // Correct import for React 18+
 import App from './App';
+import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root')); // React 18 root API
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
