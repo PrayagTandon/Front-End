@@ -10,7 +10,7 @@ const Dashboard = ({ section }) => {
 
     useEffect(() => {
         // Fetch mock Ethereum data on mount
-        const mockData = generateMockEthereumData(50);
+        const mockData = generateMockEthereumData(25);
         setTransactions(mockData);
         setLatestBlocks(mockData.slice(0, 2)); // Show only the two latest blocks
     }, []);
@@ -24,11 +24,11 @@ const Dashboard = ({ section }) => {
     return (
         <div className="p-6">
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h2 className="text-xl font-bold">Blockchain Overview</h2>
+                <h2 className="text-xl font-bold">Explorer Overview</h2>
                 <p className="mt-2">Summary information about the blockchain goes here.</p>
                 <div className="grid grid-cols-2 gap-4 mt-4">
                     <div>
-                        <h3 className="font-semibold text-lg">Latest Blocks</h3>
+                        <h3 className="font-semibold text-lg">Latest Transactions</h3>
                         <ul>
                             {latestBlocks.map((block, index) => (
                                 <li key={index} className="border p-2 rounded">
