@@ -44,12 +44,19 @@ const Transfer = ({ addNewTransaction, availableAddresses }) => {
 
             <div className="mb-4">
                 <label className="block text-sm font-medium">To Address</label>
-                <input
-                    type="text"
+                <select
                     value={toAddress}
-                    onChange={(e) => setToAddress(e.target.value)}
+                    onChange={(e) => setFromAddress(e.target.value)}
                     className="mt-1 block w-full p-2 border rounded-md"
-                />
+                    required
+                >
+                    <option value="">Select To Address</option>
+                    {availableAddresses.map((address, index) => (
+                        <option key={index} value={address}>
+                            {address}
+                        </option>
+                    ))}
+                </select>
             </div>
 
             <div className="mb-4">

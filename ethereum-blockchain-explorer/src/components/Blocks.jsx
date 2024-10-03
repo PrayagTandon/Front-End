@@ -19,6 +19,7 @@ const Blocks = ({ transactions }) => {
                 value={selectedAddress}
                 onChange={handleOnChange}
                 className="block w-full p-2 border border-gray-300 rounded-md"
+                required
             >
                 <option value="">Select an Address</option>
                 {transactions.map((tx, index) => (
@@ -28,7 +29,13 @@ const Blocks = ({ transactions }) => {
                 ))}
             </select>
 
-            {selectedBlock && <BlockDetails {...selectedBlock} />}
+            {selectedBlock ? (
+                <BlockDetails {...selectedBlock} />
+            ) : (
+                <div className="bg-yellow-100 text-yellow-700 p-4 mt-4 rounded-md">
+                    Ethereum address is required to view block details.
+                </div>
+            )}
         </div>
     );
 };
