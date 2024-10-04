@@ -4,15 +4,15 @@ const Transactions = ({ transactions }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const transactionsPerPage = 8;
 
-    // Calculate the current transactions to display based on pagination
+    //Setting up the pagination to show All transactions.
     const indexOfLastTransaction = currentPage * transactionsPerPage;
     const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
     const currentTransactions = transactions.slice(indexOfFirstTransaction, indexOfLastTransaction);
 
-    // Calculate total pages
+    // Function to calaculate Total pages
     const totalPages = Math.ceil(transactions.length / transactionsPerPage);
 
-    // Handle page change
+    // Page change handler
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -31,7 +31,7 @@ const Transactions = ({ transactions }) => {
                 ))}
             </ul>
 
-            {/* Pagination */}
+            {/*  Implementing Pagination */}
             <div className="flex justify-center mt-4">
                 {[...Array(totalPages).keys()].map((number) => (
                     <button

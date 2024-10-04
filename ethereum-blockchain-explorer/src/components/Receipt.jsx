@@ -4,7 +4,7 @@ const Receipt = ({ transactionHash, blockHash, blockNumber, from, to, amount, ga
     if (!from || !to || !amount) {
         return (
             <div className="bg-red-100 text-red-700 p-4 mt-4 rounded-md">
-                Required transfer fields are missing. Please check the details and try again.
+                Required Trsnsfer details are Missing.
             </div>
         );
     }

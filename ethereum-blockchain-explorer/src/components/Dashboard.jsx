@@ -8,14 +8,15 @@ const Dashboard = ({ section }) => {
     const [transactions, setTransactions] = useState([]);
     const [latestBlocks, setLatestBlocks] = useState([]);
 
+    // Fetching the mock data
     useEffect(() => {
-        // Fetch mock Ethereum data on mount
         const mockData = generateMockEthereumData(20);
         setTransactions(mockData);
-        setLatestBlocks(mockData.slice(0, 2)); // Show only the two latest blocks
+        // To show only 2 latest blocks in the Recent Transactions section...
+        setLatestBlocks(mockData.slice(0, 2));
     }, []);
 
-    // Function to handle adding a new transaction from the Transfer form
+    // TO add new transactions to all transactions list
     const addNewTransaction = (newTx) => {
         setTransactions((prevTx) => [newTx, ...prevTx]);
         setLatestBlocks((prevBlocks) => [newTx, ...prevBlocks.slice(0, 1)]);

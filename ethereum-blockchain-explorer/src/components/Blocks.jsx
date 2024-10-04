@@ -8,8 +8,16 @@ const Blocks = ({ transactions }) => {
     const handleOnChange = (e) => {
         const address = e.target.value;
         setSelectedAddress(address);
+
+        // Find the transaction related to the selected address
         const block = transactions.find((tx) => tx.from === address || tx.to === address);
-        setSelectedBlock(block || null);
+
+        // Update selectedBlock if found, otherwise null
+        setSelectedBlock(block ? {
+            address: block.from, // Assuming you want to display the `from` address
+            balance: block.balance || 'N/A', // Default to 'N/A' if balance is missing
+            gasUsed: block.gasUsed || 'N/A' // Default to 'N/A' if gasUsed is missing
+        } : null);
     };
 
     return (
