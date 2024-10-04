@@ -9,14 +9,14 @@ const Blocks = ({ transactions }) => {
         const address = e.target.value;
         setSelectedAddress(address);
 
-        // Find the transaction related to the selected address
+        // To find the transaction realted to current address
         const block = transactions.find((tx) => tx.from === address || tx.to === address);
 
-        // Update selectedBlock if found, otherwise null
+        // Using Ternary Operator to Display the block....
         setSelectedBlock(block ? {
-            address: block.from, // Assuming you want to display the `from` address
-            balance: block.balance || 'N/A', // Default to 'N/A' if balance is missing
-            gasUsed: block.gasUsed || 'N/A' // Default to 'N/A' if gasUsed is missing
+            address: block.from,
+            balance: block.balance || 'N/A',
+            gasUsed: block.gasUsed || 'N/A'
         } : null);
     };
 
@@ -41,7 +41,7 @@ const Blocks = ({ transactions }) => {
                 <BlockDetails {...selectedBlock} />
             ) : (
                 <div className="bg-yellow-100 text-yellow-700 p-4 mt-4 rounded-md">
-                    Ethereum address is required to view block details.
+                    Please enter a Valid Ethereum Address.
                 </div>
             )}
         </div>

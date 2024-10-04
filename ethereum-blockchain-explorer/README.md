@@ -1,57 +1,38 @@
-# Open AI landing page
+# Project done by:
 
-Build a Beautiful Landing page for an AI website using SCSS and ReactJS.
+- Name: Anoosh Koneru
+- Student ID: 101579792
+- Email: 101579792@georgebrown.ca
 
-## Table of contents
+- Name: Prayag Tandon
+- Student ID: 101571637
+- Email: 101571637@georgebrown.ca
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-- [Author](#author)
+## Ethereum Blockchain Explorer Landing Page
 
-## Overview
+Built a Landing Page for an Ethereum Blockchain Explorer, where we can see the transactions, create a new transfer and even find information regarding a block.
 
-- Developed a beautiful and responsive UI/UX landing page for a AI based website using ReactJS , ReactJS templates and SCSS.
-- Used SCSS as a CSS preprocessor, and made use of SCSS Mixins and Variable declaration to write beautiful and clean CSS code.
-- Integrated ReactJS with SCSS to make industry oriented approach for website development.
-- Layout the entire website using modern CSS layout features of Flex and Grid.
-- Added Animations by adding Keyframes for a beautiful and responsive navbar.
+## Features
 
-### Screenshot
+- ### Transactions Overview: Displays all blockchain transactions with pagination.
+- ### Transfer Creation: Allows users to create a new Ethereum transfer, which is then displayed in the latest blocks.
+- ### Block Details: Allows users to select a block by address and view its details.
+- ### Navigation: Simple routing with links to Transactions, Transfer, and Blocks sections.
 
-![Home-page Screenshot](/src/assets/Home-page-screenshot.png)
-![What is GPT3 Screenshot](/src/assets/WGPT3-screenshot.png)
+## Teach Used
 
-### Links
+- React: JavaScript library for building user interfaces.
+- Vite: Fast build tool for React projects.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- Material-UI: React UI framework for modern components.
+- CryptoJS: Library for generating transaction hashes using SHA256.
+- @faker-js/faker: Used to generate mock Ethereum data (addresses, transactions)
 
-- Solution URL: [Solution on Github](https://github.com/PrayagTandon/gpt-3_landing-page)
-- Live Site URL: [Live site](https://openai-ui-prayag.netlify.app/)
+## References
 
-### Built with
-
-- Semantic HTML5 markup
-- Used modern HTML5 elements such as Main and Aside instead of generic Div
-- SCSS as a CSS preprocessor
-- ReactJS for using reusable components and overall struture.
-
-### What I learned
-
-- Developed a full landing page using SCSS and applied the concepts of SCSS.
-- Integrated SCSS with ReactJS for industry level approach to website development.
-
-### Continued development
-
-- Developing skills to write more Fluent ReactJS code.
-- To make individual Blog page that displays each Blog description.
-- Developing a functional CMS to make the Blog section Interactive.
-- Make a Sign Up option and authentication.
-
-## Author
-
-- Github - [Prayag Tandon](https://github.com/PrayagTandon)
-- LinkedIn- [@PrayagTandon](https://www.linkedin.com/in/prayag-tandon/)
-
-### Design inspiration from [@JavaScriptmastery](https://www.youtube.com/@javascriptmastery) Youtube channel.
+- [React Docs](https://react.dev/)
+- [MaterialUI Docs](https://mui.com/material-ui/getting-started/)
+- [Tailwind CSS - Docs](https://tailwindcss.com/docs/installation)
+- [Faker-JS Docs](https://fakerjs.dev/guide/)
+- [Pagination Tutorial - Youtube](https://www.youtube.com/watch?v=wAGIOCqS8tk)
+- [React Crash Course - Youtube](https://www.youtube.com/watch?v=LDB4uaJ87e0&t=22s)
