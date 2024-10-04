@@ -10,11 +10,11 @@ const Transfer = ({ addNewTransaction, availableAddresses }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTransaction = {
-            transactionHash: CryptoJS.SHA256(faker.datatype.uuid()).toString(),
+            transactionHash: CryptoJS.SHA256(faker.string.uuid()).toString(),
             from: fromAddress,
             to: toAddress,
             amount: `${amount} ETH`,
-            gasUsed: faker.datatype.number({ min: 21000, max: 500000 }),
+            gasUsed: faker.number.float({ min: 21000, max: 500000 }),
             timestamp: new Date().toISOString(),
         };
         addNewTransaction(newTransaction);
@@ -22,7 +22,7 @@ const Transfer = ({ addNewTransaction, availableAddresses }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="border p-4 rounded-lg bg-gray-50">
+        <form onSubmit={handleSubmit} className="border-2 border-orange-700 p-4 rounded-lg bg-gray-50 mt-8">
             <h3 className="font-semibold text-lg mb-2">Create New Transfer</h3>
 
             <div className="mb-4">
@@ -70,7 +70,7 @@ const Transfer = ({ addNewTransaction, availableAddresses }) => {
                 />
             </div>
 
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md shadow">
+            <button type="submit" className="bg-[#036642] text-white px-4 py-2 rounded-md shadow-lg hover:bg-[#1c7555] cursor-pointer">
                 Transfer
             </button>
         </form>

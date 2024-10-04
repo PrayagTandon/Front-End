@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Transactions = ({ transactions }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const transactionsPerPage = 10;
+    const transactionsPerPage = 8;
 
     // Calculate the current transactions to display based on pagination
     const indexOfLastTransaction = currentPage * transactionsPerPage;
@@ -19,10 +19,10 @@ const Transactions = ({ transactions }) => {
 
     return (
         <div>
-            <h3 className="font-semibold text-lg mb-2">All Transactions</h3>
-            <ul>
+            <h3 className="font-semibold text-lg mb-4">All Transactions</h3>
+            <ul className='flex flex-col gap-4'>
                 {currentTransactions.map((tx, index) => (
-                    <li key={index} className="border p-2 rounded mb-2">
+                    <li key={index} className="border-2 rounded-md py-3 px-4 bg-[#8aeac7] border-[#ccc62a] flex flex-col gap-1">
                         <strong>Transaction Hash:</strong> {tx.transactionHash} <br />
                         <strong>From:</strong> {tx.from} <br />
                         <strong>To:</strong> {tx.to} <br />
@@ -37,7 +37,7 @@ const Transactions = ({ transactions }) => {
                     <button
                         key={number + 1}
                         onClick={() => handlePageChange(number + 1)}
-                        className={`px-4 py-2 mx-1 border rounded ${currentPage === number + 1 ? 'bg-blue-500 text-white' : 'bg-white text-black'}`}
+                        className={`px-4 py-2 mx-1 border rounded-lg ${currentPage === number + 1 ? 'bg-blue-800 cursor-pointer text-white' : 'bg-white text-black'}`}
                     >
                         {number + 1}
                     </button>

@@ -10,7 +10,7 @@ const Dashboard = ({ section }) => {
 
     useEffect(() => {
         // Fetch mock Ethereum data on mount
-        const mockData = generateMockEthereumData(25);
+        const mockData = generateMockEthereumData(20);
         setTransactions(mockData);
         setLatestBlocks(mockData.slice(0, 2)); // Show only the two latest blocks
     }, []);
@@ -24,16 +24,15 @@ const Dashboard = ({ section }) => {
     const availableAddresses = transactions.map((tx) => tx.from);
 
     return (
-        <div className="m-6 backdrop-blur-2xl">
-            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h2 className="text-xl font-bold">Blockchain Overview</h2>
-                <p className="mt-2">Summary information about the blockchain goes here.</p>
+        <div className="m-6 backdrop-blur-2xl border-4 border-[#8e726a] rounded-md">
+            <div className="bg-white rounded-lg shadow-md p-6">
+                <h2 className="text-xl font-bold text-center mb-8 underline">Blockchain Overview</h2>
                 <div className="grid grid-cols-2 gap-4 mt-4">
-                    <div>
-                        <h3 className="font-semibold text-lg">Latest Blocks</h3>
-                        <ul>
+                    <div className='w-[95%]'>
+                        <h3 className="font-semibold text-lg mb-4">Latest Blocks</h3>
+                        <ul className='flex flex-col gap-4'>
                             {latestBlocks.map((block, index) => (
-                                <li key={index} className="border p-2 rounded">
+                                <li key={index} className="border-2 rounded-md py-3 px-4 bg-[#95a9f2] border-[#193dc1] flex flex-col gap-1">
                                     <strong>Transaction Hash:</strong> {block.transactionHash} <br />
                                     <strong>From:</strong> {block.from} <br />
                                     <strong>To:</strong> {block.to} <br />

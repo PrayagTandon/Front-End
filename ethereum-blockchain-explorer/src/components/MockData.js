@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import CryptoJS from 'crypto-js';
 
 // Function to generate 50 mock Ethereum transactions
-export const generateMockEthereumData = (num = 25) => {
+export const generateMockEthereumData = (num = 20) => {
     const mockData = [];
 
     for (let i = 0; i < num; i++) {
