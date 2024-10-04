@@ -19,7 +19,7 @@ Built a Landing Page for an Ethereum Blockchain Explorer, where we can see the t
 - ### Block Details: Allows users to select a block by address and view its details.
 - ### Navigation: Simple routing with links to Transactions, Transfer, and Blocks sections.
 
-## Teach Used
+## Tech Used
 
 - React: JavaScript library for building user interfaces.
 - Vite: Fast build tool for React projects.
