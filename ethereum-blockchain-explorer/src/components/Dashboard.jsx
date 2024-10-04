@@ -24,7 +24,7 @@ const Dashboard = ({ section }) => {
     const availableAddresses = transactions.map((tx) => tx.from);
 
     return (
-        <div className="p-6">
+        <div className="m-6 backdrop-blur-2xl">
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
                 <h2 className="text-xl font-bold">Blockchain Overview</h2>
                 <p className="mt-2">Summary information about the blockchain goes here.</p>
