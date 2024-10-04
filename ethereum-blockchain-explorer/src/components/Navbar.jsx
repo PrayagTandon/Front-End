@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = () => {
     return (
-        <AppBar position="static" className="bg-blue-500">
+        <AppBar position="static" className="bg-black">
             <Toolbar>
                 <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <MenuIcon />
